@@ -1,5 +1,6 @@
 use aiken/collection/list
 use cardano/transaction.{Transaction, OutputReference}
+use cardano/script_context.{ScriptContext}
 use aiken/crypto.{Blake2b_224, Hash, VerificationKey}
 
 pub type Datum {
@@ -17,6 +18,10 @@ validator staking {
     expect Some(Datum { owner }) = datum
     
     list.has(self.extra_signatories, owner)?
+  }
+
+  else(_ctx: ScriptContext) {
+    fail @"unsupported purpose"
   }
 }
 
