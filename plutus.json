@@ -1,0 +1,72 @@
+{
+  "preamble": {
+    "title": "tokeo_pay/staking",
+    "description": "Aiken contracts for project 'tokeo_pay/staking'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.5+a7741ec"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "toke_stake.staking.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/toke_stake~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "_",
+        "schema": {
+          "$ref": "#/definitions/Void"
+        }
+      },
+      "compiledCode": "58d601010032323232323225333002323232323253330073370e900118041baa001132323232533300b3370e900018061baa00213322323300100100322533301200114a0264a66602066e3cdd7180a0010020a5113300300300130140013758601e60206020602060206020602060206020601a6ea8020dd7180798069baa300f300d37540042ca66601466e1d2000300b375400a2a66601a60186ea80145261616300d300e002300c001300937540022c6014601600460120026012004600e00260086ea8004526136565734aae7555cf2ab9f5742ae89",
+      "hash": "4893567e6607624e6eac02afabc7c18f2dda68404b379fc55c964e36"
+    },
+    {
+      "title": "toke_stake.staking.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "58d601010032323232323225333002323232323253330073370e900118041baa001132323232533300b3370e900018061baa00213322323300100100322533301200114a0264a66602066e3cdd7180a0010020a5113300300300130140013758601e60206020602060206020602060206020601a6ea8020dd7180798069baa300f300d37540042ca66601466e1d2000300b375400a2a66601a60186ea80145261616300d300e002300c001300937540022c6014601600460120026012004600e00260086ea8004526136565734aae7555cf2ab9f5742ae89",
+      "hash": "4893567e6607624e6eac02afabc7c18f2dda68404b379fc55c964e36"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "title": "ByteArray",
+      "dataType": "bytes"
+    },
+    "Void": {
+      "title": "Unit",
+      "anyOf": [
+        {
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        }
+      ]
+    },
+    "toke_stake/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
